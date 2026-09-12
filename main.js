@@ -163,7 +163,7 @@ const projectCaseStudies = {
       <h4>Outcome & Key Impact</h4>
       <p>Delivered a flawless, frame-accurate video presentation live at midnight before a massive live Times Square audience and national broadcast viewers with zero frame dropping, zero latency drift, and crisp geometric visual rendering across all display facets.</p>
     `,
-    tags: ["Hardware Reverse Engineering", "C / C++", "Socket Protocols", "Frame Sync", "Media Systems"]
+    tags: ["Hardware Reverse Engineering", "C / C++", "Socket Protocols", "Frame Sync", "Media Systems"],
   },
 
   "bmw-screensaver": {
@@ -184,10 +184,16 @@ const projectCaseStudies = {
       <h4>Outcome & Key Impact</h4>
       <p>Achieved a 100% successful global rollout across corporate headquarters and regional facilities with zero downtime, zero memory leak degradation, and zero reported IT ticket escalations across the entire workstation fleet.</p>
     `,
-    tags: ["Enterprise Deployment", "Zero-Leak Memory Architecture", "C / C++ / Win32 / macOS", "Active Directory", "Performance Optimization"]
+    tags: [
+      "Enterprise Deployment",
+      "Zero-Leak Memory Architecture",
+      "C / C++ / Win32 / macOS",
+      "Active Directory",
+      "Performance Optimization",
+    ],
   },
 
-  "firebell": {
+  firebell: {
     category: "Live High-Stress Simulation",
     title: "Firebell: C-Level Social Media Crisis Simulator",
     subtitle: "Global Public Relations Agency (Weber Shandwick)",
@@ -205,29 +211,51 @@ const projectCaseStudies = {
       <h4>Outcome & Industry Impact</h4>
       <p>Firebell put hundreds of Fortune 500 C-suite executives, legal counsel, and PR leadership teams through live "trial-by-fire" crisis exercises globally, establishing Weber Shandwick as the global leader in digital crisis preparedness.</p>
     `,
-    tags: ["Firebell", "Weber Shandwick", "Full-Stack Web Architecture", "Real-Time WebSockets", "Crisis Simulation", "Fortune 500 C-Suite"]
+    tags: [
+      "Firebell",
+      "Weber Shandwick",
+      "Full-Stack Web Architecture",
+      "Real-Time WebSockets",
+      "Crisis Simulation",
+      "Fortune 500 C-Suite",
+    ],
   },
 
-  "linetrader": {
+  linetrader: {
     category: "Quant & AI Agents",
-    title: "LineTrader: Algorithmic Quant Engine & Human-in-the-Loop AI",
-    subtitle: "Personal Quantitative Trading Infrastructure",
+    title: "LineTrader: Multi-Asset Quant Engine & Autonomous AI System",
+    subtitle: "Personal Algorithmic Trading Infrastructure (Spot, Options, Crypto)",
     body: `
-      <h4>Project Context & Architecture</h4>
-      <p>Designed and built <strong>LineTrader</strong>, a personal quantitative trading platform engineered for multi-timeframe OHLCV market analysis, technical indicator generation, backtesting simulation, and automated order execution.</p>
+      <h4>Multi-Asset Quantitative Architecture</h4>
+      <p>Designed and engineered <strong>LineTrader</strong>, a proprietary multi-asset quantitative trading platform built to trade <strong>Spot, Options, and Crypto</strong> markets simultaneously across multiple portfolios and brokerages. The system is designed with a strictly decoupled, modular interface architecture—adding a new asset class, data provider, or broker routing destination requires simply implementing a lightweight adapter interface.</p>
 
-      <h4>High-Performance DuckDB Time-Series Cache</h4>
-      <p>At the core of LineTrader is <code class="mono-text">@erikmattheis/data-tools</code>, a custom DuckDB time-series bar caching module I built. It organizes historical OHLCV data into partitioned DuckDB files (<code class="mono-text">&lt;provider&gt;/&lt;barSize&gt;.duckdb</code>), tracks range coverage intervals, and automatically detects and fills historical data gaps via API fetchers, dramatically accelerating backtests and live analysis.</p>
+      <h4>Alpha Strategy Discovery: Genetic Evolution & Walk-Forward Optimization</h4>
+      <p>To continuously surface non-linear alpha in changing market regimes, LineTrader incorporates custom <strong>Genetic Evolution algorithms</strong>, Machine Learning signal models, and rigorous <strong>Walk-Forward Optimization (WFO)</strong> routines. Strategies evolve across thousands of generations against multi-year high-frequency datasets cached in a DuckDB time-series store (<code class="mono-text">@erikmattheis/data-tools</code>), preventing curve-fitting and ensuring out-of-sample edge.</p>
 
-      <h4>Human-in-the-Loop AI Agent Integration</h4>
-      <p>Rather than leaving trade execution completely unsupervised, I integrated custom LLM AI agents (OpenAI API) into the trading loop. The AI agents continually monitor market sentiment, volume compression, and technical indicator alignment across multiple timeframes.</p>
-      <p>When an agent identifies a high-probability trade hypothesis, it constructs a structured trade proposal (entry limit price, stop loss, take profit target, position sizing, and risk rationale) and emails an interactive approval request directly to my inbox.</p>
-      <p>Clicking an approval button in the email dispatches a cryptographically signed web token back to the local execution daemon, which verifies the signature and places the trade with the broker's API instantly.</p>
+      <h4>Resilient Multi-Provider Data & Multi-Broker Execution</h4>
+      <p>System reliability is maintained through automated, multi-tiered backup data provider failovers (Polygon, Coinbase, IBKR SIP) and active multi-broker order management interfaces. Portfolio risk managers track cross-asset Delta, Gamma, and Vega exposures in real time across isolated account structures.</p>
 
-      <h4>Outcome & Personal Execution</h4>
-      <p>LineTrader provides disciplined, quantitative risk management backed by automated AI hypothesis generation, keeping human risk management in ultimate control before capital is deployed.</p>
+      <h4>1-Click Cryptographic AI Execution System</h4>
+      <p>Rather than relying on unconstrained algorithmic automation or manual chart watching, LineTrader deploys specialized LLM AI agents that act as autonomous quantitative analysts. The agents continually evaluate cross-timeframe volatility compression, order book liquidity, and macroeconomic sentiment to generate high-Expected-Value (high-EV) trade hypotheses.</p>
+      <p>When a statistical setup meets strict risk-reward criteria, the AI agent instantly dispatches a structured trade breakdown (entry limit, stop loss, profit target, expected alpha) directly to my phone with an interactive <strong>1-click cryptographic token approval link</strong>. Tapping approval instantly authorizes signed API order routing to the brokerage in milliseconds, capturing lucrative asymmetric setups while enforcing disciplined human risk oversight.</p>
+
+      <h4>Key Engineering Capabilities</h4>
+      <ul>
+        <li><strong>Multi-Asset Coverage:</strong> Equities Spot, Options Chains & Cryptocurrency.</li>
+        <li><strong>Alpha Pipeline:</strong> Genetic Strategy Evolution, ML & Walk-Forward Optimization.</li>
+        <li><strong>Modular Architecture:</strong> Pluggable Adapters for Data Providers, Asset Classes & Brokers.</li>
+        <li><strong>High-EV Execution:</strong> Cryptographically signed 1-click AI agent email trade authorization.</li>
+      </ul>
     `,
-    tags: ["LineTrader", "DuckDB", "Node.js / Python", "LLM AI Agents", "Quant Trading", "Human-in-the-Loop", "Crypto / Equities API"]
+    tags: [
+      "LineTrader",
+      "Spot / Options / Crypto",
+      "Genetic Algorithms",
+      "Walk-Forward Optimization",
+      "DuckDB",
+      "LLM AI Agents",
+      "1-Click Cryptographic Approval",
+    ],
   },
 
   "memory-leak": {
@@ -252,7 +280,14 @@ const projectCaseStudies = {
       <h4>Outcome & Impact</h4>
       <p>Eliminated memory degradation in live market data collection microservices, ensuring flat memory utilization across weeks of continuous high-volume execution, while proving the capability of AI agents to reason about low-level Node.js memory profiling.</p>
     `,
-    tags: ["Node.js Heap Profiling", "V8 Engine Diagnostics", "Memory Leaking Fixes", "AI Agent Benchmark", "WebSockets", "Performance Optimization"]
+    tags: [
+      "Node.js Heap Profiling",
+      "V8 Engine Diagnostics",
+      "Memory Leaking Fixes",
+      "AI Agent Benchmark",
+      "WebSockets",
+      "Performance Optimization",
+    ],
   },
 
   "naturally-hued": {
@@ -273,7 +308,14 @@ const projectCaseStudies = {
       <h4>Outcome & Key Impact</h4>
       <p>Demonstrates a complete full-stack blueprint for human-in-the-loop AI publishing, showcasing how modern LLMs and generative image models can be embedded cleanly into an automated content management system.</p>
     `,
-    tags: ["NaturallyHued.com", "Vue 3 / Vite", "OpenAI GPT / DALL-E", "Google Cloud Functions", "Firestore", "CMS Architecture"]
+    tags: [
+      "NaturallyHued.com",
+      "Vue 3 / Vite",
+      "OpenAI GPT / DALL-E",
+      "Google Cloud Functions",
+      "Firestore",
+      "CMS Architecture",
+    ],
   },
 
   "dank-spider": {
@@ -294,7 +336,7 @@ const projectCaseStudies = {
       <h4>Outcome & Key Impact</h4>
       <p>Delivered an automated, hands-free web scraping pipeline capable of harvesting structured datasets from thousands of target domains reliably.</p>
     `,
-    tags: ["DankSpider.com", "Puppeteer / Headless Chrome", "Node.js", "MongoDB", "ETL Pipelines", "Proxy Management"]
+    tags: ["DankSpider.com", "Puppeteer / Headless Chrome", "Node.js", "MongoDB", "ETL Pipelines", "Proxy Management"],
   },
 
   "slot-machine": {
@@ -312,7 +354,13 @@ const projectCaseStudies = {
       <h4>Outcome & Key Impact</h4>
       <p>Demonstrates advanced Vue 3 frontend state architecture, custom CSS 3D rendering performance, and Web Audio API integration for interactive multimedia web applications.</p>
     `,
-    tags: ["Vue 3 / Vuex 4", "Web Audio API", "CSS 3D Transformations", "Game Physics State Machine", "Frontend Architecture"]
+    tags: [
+      "Vue 3 / Vuex 4",
+      "Web Audio API",
+      "CSS 3D Transformations",
+      "Game Physics State Machine",
+      "Frontend Architecture",
+    ],
   },
 
   "articl-net": {
@@ -331,8 +379,8 @@ const projectCaseStudies = {
       <h4>Outcome & Key Impact</h4>
       <p>Streamlined literature discovery for radiologists and medical researchers through structured AI categorization and clean full-stack web architecture.</p>
     `,
-    tags: ["Articl.net", "Node.js / Express", "MongoDB", "Vue.js", "Medical NLP", "RESTful API"]
-  }
+    tags: ["Articl.net", "Node.js / Express", "MongoDB", "Vue.js", "Medical NLP", "RESTful API"],
+  },
 };
 
 function openProjectModal(projectId) {
@@ -352,9 +400,7 @@ function openProjectModal(projectId) {
   if (modalBody) modalBody.innerHTML = data.body;
 
   if (modalTags) {
-    modalTags.innerHTML = data.tags
-      .map((tag) => `<span class="tech-pill">${tag}</span>`)
-      .join("");
+    modalTags.innerHTML = data.tags.map((tag) => `<span class="tech-pill">${tag}</span>`).join("");
   }
 
   if (modal) {
