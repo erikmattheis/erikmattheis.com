@@ -221,6 +221,34 @@ const projectCaseStudies = {
     ],
   },
 
+  "jostens-ring-designer": {
+    category: "Pioneering Interactive E-Commerce",
+    title: "Jostens Class Ring Designer: World's First Interactive Product Configurator",
+    subtitle: "Pioneering E-Commerce Customization Platform (Jostens Corporation)",
+    body: `
+      <h4>Project Context & Historical Significance</h4>
+      <p>Before modern 3D web configurators existed, consumers customizing high-value jewelry like high school and college class rings had to rely on printed static catalogs or imagination. Jostens commissioned the architecture and development of the <strong>Jostens Class Ring Designer</strong>—one of the world's very first web-based interactive product configurators that gave consumers an instant, photorealistic visual preview of their exact customized ring before purchasing.</p>
+
+      <h4>The Engineering & Graphic Compositing Challenge</h4>
+      <p>Building a real-time visual product preview in the early web era presented severe technical hurdles: strict bandwidth constraints, browser memory limitations, and the complex combinatorial mathematics of combining dozens of ring metals (gold, silver, white gold), gemstones, cuts, side-panel crests, activity emblems, and custom engraved text strings dynamically.</p>
+
+      <h4>Architectural Solution & Layered Asset Rendering</h4>
+      <p>I engineered a dynamic image compositing and layering engine that pre-calculated vector boundaries and layer masks for thousands of ring permutations. By optimizing sprite sheets, color palette swapping, and modular asset layering, the system dynamically assembled photorealistic composite ring previews on the fly in response to consumer clicks without latency or full page refreshes.</p>
+      <p>The system seamlessly integrated real-time pricing calculation logic based on metal selections and gemstone options, submitting structured build-to-order specs directly to Jostens' manufacturing fulfillment systems.</p>
+
+      <h4>Outcome & Industry Impact</h4>
+      <p>The Jostens Ring Designer transformed how consumers bought customized jewelry, dramatically increasing online sales conversion rates and setting the early benchmark for interactive e-commerce product configurators worldwide.</p>
+    `,
+    tags: [
+      "Jostens",
+      "Interactive Product Configurator",
+      "Dynamic Image Compositing",
+      "E-Commerce Innovation",
+      "Full-Stack Web Architecture",
+      "Build-to-Order Systems",
+    ],
+  },
+
   linetrader: {
     category: "Quant & AI Agents",
     title: "LineTrader: Multi-Asset Quant Engine & Autonomous AI System",
