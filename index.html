@@ -48,7 +48,7 @@
       </h1>
       
       <p class="hero-subtitle">
-        30+ years of high-stakes problem solving — from synchronizing frame-accurate midnight videos on undocumented Times Square triangular billboards to enterprise screensaver takeovers at BMW, building Firebell (Weber Shandwick's C-level social media crisis simulator), and developing automated quantitative trading platforms with human-in-the-loop AI agent decisioning.
+        30+ years of high-stakes engineering — from synchronizing frame-accurate midnight videos on non-standard billboards in NYC to global enterprise network rollouts for luxury German automotive manufacturers, building real-time crisis simulation platforms for international PR agencies, and engineering personal quant trading systems with human-in-the-loop AI agents.
       </p>
 
       <div class="privacy-note">
@@ -91,66 +91,210 @@
     </div>
   </section>
 
-  <!-- Section: Unusual Problems & High Stress Deployments -->
+  <!-- Section: High-Stress Engineering & War Stories -->
   <section id="war-stories" class="section war-stories-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-kicker">// Case Studies</span>
+        <span class="section-kicker">// High-Stakes Case Studies</span>
         <h2 class="section-title">Solving the "Impossible" When There's No Manual</h2>
-        <p class="section-desc">When failure is not an option and standard documentation doesn't exist, I reverse engineer solutions on tight deadlines.</p>
+        <p class="section-desc">When failure is not an option and standard documentation doesn't exist, I reverse engineer solutions on tight deadlines. Click any card to expand the full 300+ word case study.</p>
       </div>
 
       <div class="cards-grid">
         
         <!-- Card 1: Times Square -->
-        <article class="card story-card highlight-card">
+        <article class="card story-card highlight-card" onclick="openProjectModal('times-square')">
           <div class="card-header">
             <span class="card-tag tag-accent">Hardware & Video Sync</span>
-            <span class="card-date">Times Square, NYC</span>
+            <span class="card-date">NYC Times Square Landmark</span>
           </div>
-          <h3 class="card-title">The Triangular Times Square Billboard Midnight Sync</h3>
+          <h3 class="card-title">Non-Standard Billboard Frame-Accurate Midnight Video Sync</h3>
           <p class="card-body">
-            Tasked with executing a video campaign on a custom triangular billboard overlooking Times Square with zero documentation or instruction manual. The video had to trigger and play synchronized to the exact millisecond as the clock struck midnight on New Year's Eve / live event.
+            Tasked with executing a live video campaign on a custom triangular display overlooking a major New York City landmark with zero documentation or instruction manual. The video had to trigger and play synchronized to the exact millisecond at midnight.
           </p>
           <ul class="card-points">
             <li>Reverse-engineered controller protocols without vendor manuals.</li>
-            <li>Eliminated drift and latencies across non-standard display geometry.</li>
-            <li>Delivered flawless midnight video execution live on location.</li>
+            <li>Eliminated playback drift across angled display geometry.</li>
+            <li>Delivered flawless midnight execution live on location.</li>
           </ul>
+          <div class="card-footer">
+            <button class="btn btn-sm btn-outline card-expand-btn">Read Case Study →</button>
+          </div>
         </article>
 
         <!-- Card 2: BMW Enterprise -->
-        <article class="card story-card">
+        <article class="card story-card" onclick="openProjectModal('bmw-screensaver')">
           <div class="card-header">
             <span class="card-tag tag-brand">Enterprise Systems</span>
-            <span class="card-date">BMW Corporate</span>
+            <span class="card-date">German Automotive Manufacturer</span>
           </div>
-          <h3 class="card-title">BMW Enterprise Screensaver Replacement</h3>
+          <h3 class="card-title">Enterprise Workstation Network Deployment</h3>
           <p class="card-body">
-            Engineered a custom interactive screensaver and deployment strategy adopted by BMW to swap out all existing employee screensavers across their global corporate network simultaneously.
+            Engineered a custom interactive screensaver and deployment strategy for a global luxury automotive manufacturer to update all employee desktop workstations across their enterprise network simultaneously.
           </p>
           <ul class="card-points">
             <li>Built ultra-lightweight, zero-memory-leak executable payload.</li>
             <li>Ensured multi-OS compatibility across corporate workstation fleets.</li>
             <li>Executed zero-downtime deployment for tens of thousands of endpoints.</li>
           </ul>
+          <div class="card-footer">
+            <button class="btn btn-sm btn-outline card-expand-btn">Read Case Study →</button>
+          </div>
         </article>
 
         <!-- Card 3: Social Media Crisis (Firebell) -->
-        <article class="card story-card">
+        <article class="card story-card" onclick="openProjectModal('firebell')">
           <div class="card-header">
             <span class="card-tag tag-warning">Live High-Stress Simulation</span>
-            <span class="card-date">Weber Shandwick / Fortune 500</span>
+            <span class="card-date">Global Public Relations Agency</span>
           </div>
-          <h3 class="card-title">Firebell: C-Level Social Media Crisis Simulator</h3>
+          <h3 class="card-title">Interactive Social Media Crisis Simulator (Firebell)</h3>
           <p class="card-body">
-            Architected and built <strong>Firebell</strong>, Weber Shandwick's proprietary social media crisis simulation application. Firebell constructed pixel-perfect replicas of Facebook, Twitter, YouTube, and corporate news sites inside an off-the-internet sandbox to put Fortune 500 C-suite executives through live, high-pressure "trial-by-fire" PR crisis exercises.
+            Architected and built an isolated, real-time social crisis simulation application for a major international PR agency to put Fortune 500 C-suite executives through live, high-pressure "trial-by-fire" reputational emergency exercises.
           </p>
           <ul class="card-points">
-            <li>Replicated working social properties & hostile third-party stakeholder accounts.</li>
-            <li>Simulated real-time viral panic timelines with unpredictable narrative twists.</li>
+            <li>Replicated working social platforms in a secure off-the-internet sandbox.</li>
+            <li>Simulated real-time viral panic timelines with live narrative twists.</li>
             <li>Trained Fortune 500 C-suite, legal, and comms teams under authentic pressure.</li>
           </ul>
+          <div class="card-footer">
+            <button class="btn btn-sm btn-outline card-expand-btn">Read Case Study →</button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: AI Agent Engineering & Systems Projects -->
+  <section id="ai-projects" class="section ai-projects-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker">// AI Agent Engineering & Specialized Applications</span>
+        <h2 class="section-title">Building With & For AI Agents</h2>
+        <p class="section-desc">Projects leveraging autonomous AI coders, LLM microservices, system diagnostic benchmarks, and custom quantitative engines. Click to view 300+ word deep dives.</p>
+      </div>
+
+      <div class="cards-grid">
+
+        <!-- Project: LineTrader -->
+        <article class="card story-card" onclick="openProjectModal('linetrader')">
+          <div class="card-header">
+            <span class="card-tag tag-accent">Quant & AI Agents</span>
+            <span class="card-date">Personal Quant Platform</span>
+          </div>
+          <h3 class="card-title">LineTrader: Quant Platform & Human-in-the-Loop AI</h3>
+          <p class="card-body">
+            Personal quantitative trading platform featuring a high-performance DuckDB OHLCV bar cache, multi-timeframe backtesting, and autonomous AI agents that email interactive trade approvals for human confirmation.
+          </p>
+          <ul class="card-points">
+            <li>DuckDB time-series caching with automatic gap detection.</li>
+            <li>LLM market sentiment and technical compression evaluation.</li>
+            <li>One-click cryptographic email token confirmation for live order execution.</li>
+          </ul>
+          <div class="card-footer">
+            <button class="btn btn-sm btn-outline card-expand-btn">Read Case Study →</button>
+          </div>
+        </article>
+
+        <!-- Project: Memory Leak -->
+        <article class="card story-card" onclick="openProjectModal('memory-leak')">
+          <div class="card-header">
+            <span class="card-tag tag-brand">Systems Diagnostics</span>
+            <span class="card-date">Node.js Performance Suite</span>
+          </div>
+          <h3 class="card-title">Node.js Memory Leak Diagnostic Suite & Agent Benchmark</h3>
+          <p class="card-body">
+            Built an isolated diagnostic suite and visual tutorial system to benchmark and train AI coding agents on identifying and resolving complex Node.js heap leaks, orphaned listeners, and circular closure references.
+          </p>
+          <ul class="card-points">
+            <li>Diagnostic test beds for WebSocket listener and timer retention.</li>
+            <li>Used to benchmark AI agent performance on deep memory profiler output.</li>
+            <li>Resolved memory leaks in IBKR market data streaming microservices.</li>
+          </ul>
+          <div class="card-footer">
+            <button class="btn btn-sm btn-outline card-expand-btn">Read Case Study →</button>
+          </div>
+        </article>
+
+        <!-- Project: NaturallyHued -->
+        <article class="card story-card" onclick="openProjectModal('naturally-hued')">
+          <div class="card-header">
+            <span class="card-tag tag-warning">Multimodal AI Studio</span>
+            <span class="card-date">NaturallyHued.com</span>
+          </div>
+          <h3 class="card-title">AI-Powered Generative Content & Asset Studio</h3>
+          <p class="card-body">
+            Dynamic web application utilizing OpenAI GPT and DALL-E models to dynamically generate, edit, and catalog structured botanical dye articles and visual media with human-in-the-loop revision controls.
+          </p>
+          <ul class="card-points">
+            <li>Vue 3 / Vite single-page app with Firebase Cloud Functions.</li>
+            <li>Interactive editorial revision portal sending conversational prompts to LLMs.</li>
+            <li>Automated text & image asset generation pipelines.</li>
+          </ul>
+          <div class="card-footer">
+            <button class="btn btn-sm btn-outline card-expand-btn">Read Case Study →</button>
+          </div>
+        </article>
+
+        <!-- Project: DankSpider -->
+        <article class="card story-card" onclick="openProjectModal('dank-spider')">
+          <div class="card-header">
+            <span class="card-tag tag-accent">Data Harvesting</span>
+            <span class="card-date">DankSpider.com</span>
+          </div>
+          <h3 class="card-title">Autonomous Web Scraping & Market Data Pipeline</h3>
+          <p class="card-body">
+            High-throughput Node.js scraping engine utilizing Puppeteer, Google Search API, and MongoDB to autonomously crawl, parse, and structure enterprise corporate metadata and market intelligence.
+          </p>
+          <ul class="card-points">
+            <li>Headless browser automation bypassing bot detection mechanisms.</li>
+            <li>JSON-to-CSV transformation and MongoDB document pipelines.</li>
+            <li>Fault-tolerant asynchronous worker queues with proxy management.</li>
+          </ul>
+          <div class="card-footer">
+            <button class="btn btn-sm btn-outline card-expand-btn">Read Case Study →</button>
+          </div>
+        </article>
+
+        <!-- Project: Slot Machine -->
+        <article class="card story-card" onclick="openProjectModal('slot-machine')">
+          <div class="card-header">
+            <span class="card-tag tag-brand">Vue 3 & Audio API</span>
+            <span class="card-date">Web Application</span>
+          </div>
+          <h3 class="card-title">Interactive Web Audio & Canvas Slot Engine</h3>
+          <p class="card-body">
+            Modular Vue 3 & Vuex application featuring custom CSS 3D reel transformations, low-latency Web Audio API synthesis, physics-based spin state machines, and synchronized payout animations.
+          </p>
+          <ul class="card-points">
+            <li>Vue 3 state machine controlling spin velocity, reels, and credit meters.</li>
+            <li>Low-latency audio playback synchronized to reel stop events.</li>
+            <li>Modular component architecture (`BaseReel`, `SymbolFace`, `ThreeDButton`).</li>
+          </ul>
+          <div class="card-footer">
+            <button class="btn btn-sm btn-outline card-expand-btn">Read Case Study →</button>
+          </div>
+        </article>
+
+        <!-- Project: Articl.net -->
+        <article class="card story-card" onclick="openProjectModal('articl-net')">
+          <div class="card-header">
+            <span class="card-tag tag-warning">Healthcare Directory</span>
+            <span class="card-date">Articl.net</span>
+          </div>
+          <h3 class="card-title">Medical Radiology Directory & AI Content Categorization</h3>
+          <p class="card-body">
+            Radiology research article directory built with Node.js, MongoDB, and Vue.js. Integrates automated text processing to extract, index, and tag medical literature abstracts for radiology specialists.
+          </p>
+          <ul class="card-points">
+            <li>Custom RESTful API in Node/Mongo with responsive Vue.js UI.</li>
+            <li>Automated indexing and categorization of radiology journal literature.</li>
+            <li>Custom CMS tools for research bookmarking and peer annotations.</li>
+          </ul>
+          <div class="card-footer">
+            <button class="btn btn-sm btn-outline card-expand-btn">Read Case Study →</button>
+          </div>
         </article>
 
       </div>
@@ -461,6 +605,24 @@
       </div>
     </div>
   </footer>
+
+  <!-- Modal Drawer Overlay for 300-500 Word Case Studies -->
+  <div id="project-modal" class="modal-overlay" aria-hidden="true" onclick="closeProjectModal(event)">
+    <div class="modal-container" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" aria-label="Close Case Study" onclick="closeProjectModal()">×</button>
+      <div class="modal-header">
+        <span id="modal-category" class="card-tag tag-accent">Category</span>
+        <h2 id="modal-title">Case Study Title</h2>
+        <div id="modal-subtitle" class="modal-subtitle">Project Subtitle</div>
+      </div>
+      <div id="modal-body" class="modal-body">
+        <!-- 300-500 word narrative populated by main.js -->
+      </div>
+      <div id="modal-tags" class="modal-tags">
+        <!-- Tech stack tags -->
+      </div>
+    </div>
+  </div>
 
   <script src="main.js"></script>
 </body>
