@@ -9,6 +9,8 @@
   --bg-grid-line: rgba(104, 190, 128, 0.11);
   --bg-grid-major-line: rgba(104, 190, 128, 0.19);
   --bg-paper-tint: rgba(35, 94, 53, 0.08);
+  --bg-paper-base: #0d1511;
+  --bg-paper-base-line: rgba(104, 190, 128, 0.045);
   --bg-brand-wall: rgba(18, 24, 36, 0.5);
   --bg-privacy-note: rgba(18, 24, 36, 0.9);
   --bg-contact-gradient: linear-gradient(135deg, #121824 0%, #151d2f 100%);
@@ -51,6 +53,8 @@ html[data-theme="light"] {
   --bg-grid-line: rgba(52, 126, 72, 0.14);
   --bg-grid-major-line: rgba(52, 126, 72, 0.24);
   --bg-paper-tint: rgba(211, 239, 218, 0.52);
+  --bg-paper-base: #f4faf5;
+  --bg-paper-base-line: rgba(52, 126, 72, 0.055);
   --bg-brand-wall: rgba(226, 232, 240, 0.6);
   --bg-privacy-note: rgba(241, 245, 249, 0.9);
   --bg-contact-gradient: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
@@ -85,6 +89,8 @@ html[data-theme="light"] {
     --bg-grid-line: rgba(52, 126, 72, 0.14);
     --bg-grid-major-line: rgba(52, 126, 72, 0.24);
     --bg-paper-tint: rgba(211, 239, 218, 0.52);
+    --bg-paper-base: #f4faf5;
+    --bg-paper-base-line: rgba(52, 126, 72, 0.055);
     --bg-brand-wall: rgba(226, 232, 240, 0.6);
     --bg-privacy-note: rgba(241, 245, 249, 0.9);
     --bg-contact-gradient: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
@@ -358,6 +364,11 @@ html[data-theme="light"] .theme-toggle-btn .moon-icon {
   min-height: 90vh;
   display: flex;
   align-items: center;
+  background-color: var(--bg-paper-base);
+  background-image:
+    linear-gradient(to right, var(--bg-paper-base-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--bg-paper-base-line) 1px, transparent 1px);
+  background-size: 8px 8px;
 }
 
 .hero-bg-grid {
