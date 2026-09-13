@@ -213,6 +213,10 @@
 
         <!-- Project: LineTrader -->
         <article class="card story-card" onclick="openProjectModal('linetrader')">
+          <div class="project-thumbnail" aria-label="LineTrader dashboard preview">
+            <img class="project-thumbnail-image theme-image-light" src="LineTrader_Thumb_Light.png" alt="LineTrader dashboard thumbnail">
+            <img class="project-thumbnail-image theme-image-dark" src="LineTrader_Thumb_Dark.png" alt="">
+          </div>
           <div class="card-header">
             <span class="card-tag tag-accent">Quant & AI Agents</span>
             <span class="card-date">Personal Quant Platform</span>
@@ -647,7 +651,7 @@
     </div>
   </footer>
 
-  <!-- Modal Drawer Overlay for 300-500 Word Case Studies -->
+  <!-- Centered Modal Overlay for 300-500 Word Case Studies -->
   <div id="project-modal" class="modal-overlay" aria-hidden="true" onclick="closeProjectModal(event)">
     <div class="modal-container" onclick="event.stopPropagation()">
       <button class="modal-close-btn" aria-label="Close Case Study" onclick="closeProjectModal()">×</button>
@@ -659,9 +663,24 @@
       <div id="modal-body" class="modal-body">
         <!-- 300-500 word narrative populated by main.js -->
       </div>
+      <div id="modal-media-actions" class="modal-media-actions" hidden>
+        <button class="btn btn-primary" type="button" onclick="openProjectGallery()">View LineTrader Screenshots</button>
+      </div>
       <div id="modal-tags" class="modal-tags">
         <!-- Tech stack tags -->
       </div>
+    </div>
+  </div>
+
+  <div id="project-gallery-modal" class="modal-overlay gallery-overlay" aria-hidden="true" onclick="closeProjectGallery(event)">
+    <div class="gallery-container" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" aria-label="Close screenshots" onclick="closeProjectGallery()">×</button>
+      <div class="modal-header">
+        <span class="card-tag tag-accent">LineTrader Screenshots</span>
+        <h2>System Views</h2>
+        <div class="modal-subtitle">Theme-aware interface captures</div>
+      </div>
+      <div id="gallery-grid" class="gallery-grid"></div>
     </div>
   </div>
 

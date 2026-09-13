@@ -6,8 +6,8 @@
   --bg-nav: rgba(10, 14, 23, 0.85);
   --bg-email: #0b0f19;
   --bg-email-bar: rgba(255, 255, 255, 0.03);
-  --bg-grid-line: rgba(104, 190, 128, 0.11);
-  --bg-grid-major-line: rgba(104, 190, 128, 0.19);
+  --bg-grid-line: rgba(104, 190, 128, 0.07);
+  --bg-grid-major-line: rgba(104, 190, 128, 0.13);
   --bg-paper-tint: rgba(35, 94, 53, 0.08);
   --bg-brand-wall: rgba(18, 24, 36, 0.5);
   --bg-privacy-note: rgba(18, 24, 36, 0.9);
@@ -48,8 +48,8 @@ html[data-theme="light"] {
   --bg-nav: rgba(248, 250, 252, 0.88);
   --bg-email: #f1f5f9;
   --bg-email-bar: rgba(0, 0, 0, 0.04);
-  --bg-grid-line: rgba(52, 126, 72, 0.14);
-  --bg-grid-major-line: rgba(52, 126, 72, 0.24);
+  --bg-grid-line: rgba(52, 126, 72, 0.07);
+  --bg-grid-major-line: rgba(52, 126, 72, 0.13);
   --bg-paper-tint: rgba(211, 239, 218, 0.52);
   --bg-brand-wall: rgba(226, 232, 240, 0.6);
   --bg-privacy-note: rgba(241, 245, 249, 0.9);
@@ -82,8 +82,8 @@ html[data-theme="light"] {
     --bg-nav: rgba(248, 250, 252, 0.88);
     --bg-email: #f1f5f9;
     --bg-email-bar: rgba(0, 0, 0, 0.04);
-    --bg-grid-line: rgba(52, 126, 72, 0.14);
-    --bg-grid-major-line: rgba(52, 126, 72, 0.24);
+    --bg-grid-line: rgba(52, 126, 72, 0.07);
+    --bg-grid-major-line: rgba(52, 126, 72, 0.13);
     --bg-paper-tint: rgba(211, 239, 218, 0.52);
     --bg-brand-wall: rgba(226, 232, 240, 0.6);
     --bg-privacy-note: rgba(241, 245, 249, 0.9);
@@ -405,7 +405,7 @@ html[data-theme="light"] .theme-toggle-btn .moon-icon {
 .hero-title {
   font-size: clamp(2.4rem, 5vw, 4.2rem);
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.18;
   letter-spacing: -0.03em;
   margin-bottom: 1.5rem;
   max-width: 900px;
@@ -532,6 +532,42 @@ html[data-theme="light"] .theme-toggle-btn .moon-icon {
   transform: translateY(-4px);
   border-color: var(--border-highlight);
   background-color: var(--bg-card-hover);
+}
+
+.project-thumbnail {
+  display: block;
+  aspect-ratio: 1;
+  margin: -0.5rem -0.5rem 1.5rem;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--bg-card-hover);
+}
+
+.project-thumbnail-image {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+html[data-theme="dark"] .project-thumbnail-image.theme-image-dark {
+  display: block;
+}
+
+html[data-theme="light"] .project-thumbnail-image.theme-image-light {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .project-thumbnail-image.theme-image-dark {
+    display: block;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html:not([data-theme="dark"]) .project-thumbnail-image.theme-image-light {
+    display: block;
+  }
 }
 
 .highlight-card {
@@ -1085,6 +1121,71 @@ html[data-theme="light"] .theme-toggle-btn .moon-icon {
   border-top: 1px solid var(--border-subtle);
 }
 
+.modal-media-actions {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1.5rem;
+}
+
+.gallery-container {
+  width: 100%;
+  max-width: 980px;
+  max-height: min(90vh, 980px);
+  overflow-y: auto;
+  position: relative;
+  padding: 2.5rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-highlight);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card-hover);
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gallery-item .theme-image-dark,
+.gallery-item .theme-image-light {
+  display: none;
+}
+
+html[data-theme="dark"] .gallery-item .theme-image-dark {
+  display: block;
+}
+
+html[data-theme="light"] .gallery-item .theme-image-light {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .gallery-item .theme-image-dark {
+    display: block;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html:not([data-theme="dark"]) .gallery-item .theme-image-light {
+    display: block;
+  }
+}
+
 /* Footer */
 .footer {
   padding: 2rem 0;
@@ -1141,5 +1242,14 @@ html[data-theme="light"] .theme-toggle-btn .moon-icon {
 
   .contact-card {
     padding: 2rem 1.5rem;
+  }
+
+  .gallery-container {
+    max-height: 92vh;
+    padding: 2rem 1.25rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
   }
 }

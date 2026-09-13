@@ -152,6 +152,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeProjectGallery();
+      closeProjectModal();
+    }
+  });
+
   updateThemeToggleUI();
 });
 
@@ -324,6 +331,28 @@ const projectCaseStudies = {
       "LLM AI Agents",
       "1-Click Cryptographic Approval",
     ],
+    gallery: [
+      {
+        light: "assets/LineTrader_ByName_Light.png",
+        dark: "assets/LineTrader_ByName_Dark.png",
+        alt: "LineTrader strategy view by name",
+      },
+      {
+        light: "assets/LineTrader_ByStrategyLight.png",
+        dark: "assets/LineTrader_ByStrategy_Dark.png",
+        alt: "LineTrader strategy view by strategy",
+      },
+      {
+        light: "assets/LineTrader_Chart_Light.png",
+        dark: "assets/LineTrader_Chart_Dark.png",
+        alt: "LineTrader chart view",
+      },
+      {
+        light: "assets/LineTrader_Prestudies_Light.png",
+        dark: "assets/LineTrader_Prestudies_Dark.png",
+        alt: "LineTrader prestudies view",
+      },
+    ],
   },
 
   "memory-leak": {
@@ -461,6 +490,7 @@ function openProjectModal(projectId) {
   const modalSubtitle = document.getElementById("modal-subtitle");
   const modalBody = document.getElementById("modal-body");
   const modalTags = document.getElementById("modal-tags");
+  const modalMediaActions = document.getElementById("modal-media-actions");
 
   if (modalCategory) modalCategory.textContent = data.category;
   if (modalTitle) modalTitle.textContent = data.title;
@@ -470,11 +500,46 @@ function openProjectModal(projectId) {
   if (modalTags) {
     modalTags.innerHTML = data.tags.map((tag) => `<span class="tech-pill">${tag}</span>`).join("");
   }
+  if (modalMediaActions) {
+    modalMediaActions.hidden = !data.gallery;
+  }
 
   if (modal) {
     modal.classList.add("active");
     modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden"; // Prevent scrolling behind modal
+  }
+}
+
+function openProjectGallery() {
+  const data = projectCaseStudies.linetrader;
+  const galleryModal = document.getElementById("project-gallery-modal");
+  const galleryGrid = document.getElementById("gallery-grid");
+  if (!data?.gallery || !galleryModal || !galleryGrid) return;
+
+  galleryGrid.innerHTML = data.gallery
+    .map(
+      (image) => `
+        <picture class="gallery-item">
+          <img class="theme-image-light" src="${image.light}" alt="${image.alt}">
+          <img class="theme-image-dark" src="${image.dark}" alt="">
+        </picture>
+      `,
+    )
+    .join("");
+
+  galleryModal.classList.add("active");
+  galleryModal.setAttribute("aria-hidden", "false");
+}
+
+function closeProjectGallery(event) {
+  if (event && event.stopPropagation) {
+    event.stopPropagation();
+  }
+  const galleryModal = document.getElementById("project-gallery-modal");
+  if (galleryModal) {
+    galleryModal.classList.remove("active");
+    galleryModal.setAttribute("aria-hidden", "true");
   }
 }
 
