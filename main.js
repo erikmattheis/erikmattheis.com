@@ -113,6 +113,46 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // Theme Toggle & System Preference Controller
+  const themeToggleBtn = document.getElementById("theme-toggle-btn");
+
+  function getCurrentTheme() {
+    const customTheme = document.documentElement.getAttribute("data-theme");
+    if (customTheme) return customTheme;
+    return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+  }
+
+  function updateThemeToggleUI() {
+    const currentTheme = getCurrentTheme();
+    if (themeToggleBtn) {
+      themeToggleBtn.setAttribute(
+        "title",
+        `Current mode: ${currentTheme === "light" ? "Light" : "Dark"} (Click to toggle)`
+      );
+    }
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", () => {
+      const current = getCurrentTheme();
+      const nextTheme = current === "light" ? "dark" : "light";
+
+      document.documentElement.setAttribute("data-theme", nextTheme);
+      localStorage.setItem("theme", nextTheme);
+      updateThemeToggleUI();
+    });
+  }
+
+  // Automatically adjust if user browser/OS system preference changes and user hasn't forced an explicit preference
+  window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", () => {
+    if (!localStorage.getItem("theme")) {
+      document.documentElement.removeAttribute("data-theme");
+      updateThemeToggleUI();
+    }
+  });
+
+  updateThemeToggleUI();
 });
 
 // Handle Human Decision in Agent Simulator

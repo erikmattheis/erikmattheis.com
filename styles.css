@@ -4,6 +4,13 @@
   --bg-card: #121824;
   --bg-card-hover: #1a2234;
   --bg-nav: rgba(10, 14, 23, 0.85);
+  --bg-email: #0b0f19;
+  --bg-email-bar: rgba(255, 255, 255, 0.03);
+  --bg-grid-line: rgba(255, 255, 255, 0.03);
+  --bg-brand-wall: rgba(18, 24, 36, 0.5);
+  --bg-privacy-note: rgba(18, 24, 36, 0.9);
+  --bg-contact-gradient: linear-gradient(135deg, #121824 0%, #151d2f 100%);
+  --bg-modal-overlay: rgba(10, 14, 23, 0.85);
   
   --text-main: #f1f5f9;
   --text-muted: #94a3b8;
@@ -20,6 +27,7 @@
   
   --border-subtle: rgba(255, 255, 255, 0.08);
   --border-highlight: rgba(6, 182, 212, 0.3);
+  --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.4);
   
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -29,6 +37,70 @@
   --radius-lg: 18px;
   
   --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html[data-theme="light"] {
+  --bg-dark: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --bg-nav: rgba(248, 250, 252, 0.88);
+  --bg-email: #f1f5f9;
+  --bg-email-bar: rgba(0, 0, 0, 0.04);
+  --bg-grid-line: rgba(0, 0, 0, 0.06);
+  --bg-brand-wall: rgba(226, 232, 240, 0.6);
+  --bg-privacy-note: rgba(241, 245, 249, 0.9);
+  --bg-contact-gradient: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+  --bg-modal-overlay: rgba(15, 23, 42, 0.6);
+
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-dim: #64748b;
+
+  --accent-cyan: #0284c7;
+  --accent-cyan-glow: rgba(2, 132, 199, 0.15);
+  --accent-blue: #2563eb;
+  --accent-teal: #0d9488;
+
+  --color-success: #059669;
+  --color-danger: #dc2626;
+  --color-warning: #d97706;
+
+  --border-subtle: rgba(0, 0, 0, 0.12);
+  --border-highlight: rgba(2, 132, 199, 0.35);
+  --shadow-card: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+@media (prefers-color-scheme: light) {
+  html:not([data-theme="dark"]) {
+    --bg-dark: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f1f5f9;
+    --bg-nav: rgba(248, 250, 252, 0.88);
+    --bg-email: #f1f5f9;
+    --bg-email-bar: rgba(0, 0, 0, 0.04);
+    --bg-grid-line: rgba(0, 0, 0, 0.06);
+    --bg-brand-wall: rgba(226, 232, 240, 0.6);
+    --bg-privacy-note: rgba(241, 245, 249, 0.9);
+    --bg-contact-gradient: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+    --bg-modal-overlay: rgba(15, 23, 42, 0.6);
+
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --text-dim: #64748b;
+
+    --accent-cyan: #0284c7;
+    --accent-cyan-glow: rgba(2, 132, 199, 0.15);
+    --accent-blue: #2563eb;
+    --accent-teal: #0d9488;
+
+    --color-success: #059669;
+    --color-danger: #dc2626;
+    --color-warning: #d97706;
+
+    --border-subtle: rgba(0, 0, 0, 0.12);
+    --border-highlight: rgba(2, 132, 199, 0.35);
+    --shadow-card: 0 10px 30px rgba(15, 23, 42, 0.08);
+  }
 }
 
 *, *::before, *::after {
@@ -145,6 +217,55 @@ ul {
   font-size: 0.88rem;
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.theme-toggle-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--border-highlight);
+  color: var(--accent-cyan);
+  transform: translateY(-1px);
+}
+
+.theme-toggle-btn .sun-icon {
+  display: block;
+}
+.theme-toggle-btn .moon-icon {
+  display: none;
+}
+
+html[data-theme="light"] .theme-toggle-btn .sun-icon {
+  display: none;
+}
+html[data-theme="light"] .theme-toggle-btn .moon-icon {
+  display: block;
+}
+
+@media (prefers-color-scheme: light) {
+  html:not([data-theme="dark"]) .theme-toggle-btn .sun-icon {
+    display: none;
+  }
+  html:not([data-theme="dark"]) .theme-toggle-btn .moon-icon {
+    display: block;
+  }
+}
+
 .mobile-menu-toggle {
   display: none;
   background: none;
@@ -237,8 +358,8 @@ ul {
   position: absolute;
   inset: 0;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, var(--bg-grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--bg-grid-line) 1px, transparent 1px);
   background-size: 40px 40px;
   mask-image: radial-gradient(circle at 50% 30%, black 30%, transparent 80%);
   -webkit-mask-image: radial-gradient(circle at 50% 30%, black 30%, transparent 80%);
@@ -295,7 +416,7 @@ ul {
   align-items: flex-start;
   gap: 0.8rem;
   padding: 1rem 1.2rem;
-  background-color: rgba(18, 24, 36, 0.9);
+  background-color: var(--bg-privacy-note);
   border: 1px solid var(--border-subtle);
   border-left: 3px solid var(--accent-cyan);
   border-radius: var(--radius-sm);
@@ -517,7 +638,7 @@ ul {
   border: 1px solid var(--border-highlight);
   border-radius: var(--radius-md);
   padding: 1.5rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-card);
 }
 
 .demo-header {
@@ -543,7 +664,7 @@ ul {
 }
 
 .email-mockup {
-  background-color: #0b0f19;
+  background-color: var(--bg-email);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   overflow: hidden;
@@ -551,7 +672,7 @@ ul {
 }
 
 .email-header-bar {
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: var(--bg-email-bar);
   padding: 0.8rem 1rem;
   border-bottom: 1px solid var(--border-subtle);
   display: flex;
@@ -577,7 +698,7 @@ ul {
 }
 
 .trade-summary-box {
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: var(--bg-email-bar);
   border: 1px dashed var(--border-highlight);
   border-radius: var(--radius-sm);
   padding: 0.8rem 1rem;
@@ -658,7 +779,7 @@ ul {
 
 .skill-list li {
   padding: 0.4rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid var(--border-subtle);
   font-size: 0.92rem;
   color: var(--text-muted);
 }
@@ -674,7 +795,7 @@ ul {
   gap: 0.8rem;
   margin-bottom: 3.5rem;
   padding: 1.5rem;
-  background-color: rgba(18, 24, 36, 0.5);
+  background-color: var(--bg-brand-wall);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   justify-content: center;
@@ -769,11 +890,11 @@ ul {
 
 /* Contact Section */
 .contact-card {
-  background: linear-gradient(135deg, var(--bg-card) 0%, #151d2f 100%);
+  background: var(--bg-contact-gradient);
   border: 1px solid var(--border-highlight);
   border-radius: var(--radius-lg);
   padding: 3.5rem 2.5rem;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow-card);
   max-width: 900px;
   margin: 0 auto;
 }
@@ -843,7 +964,7 @@ ul {
   position: fixed;
   inset: 0;
   z-index: 2000;
-  background-color: rgba(10, 14, 23, 0.85);
+  background-color: var(--bg-modal-overlay);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   display: flex;
