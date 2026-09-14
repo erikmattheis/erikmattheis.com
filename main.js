@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (themeToggleBtn) {
       themeToggleBtn.setAttribute(
         "title",
-        `Current mode: ${currentTheme === "light" ? "Light" : "Dark"} (Click to toggle)`
+        `Current mode: ${currentTheme === "light" ? "Light" : "Dark"} (Click to toggle)`,
       );
     }
   }
@@ -198,14 +198,13 @@ const projectCaseStudies = {
     subtitle: "NYC Times Square Landmark Display",
     body: `
       <h4>Project Context & Objectives</h4>
-      <p>Contracted to execute a high-profile live video presentation on a prominent triangular LED billboard overlooking Times Square in New York City. The video had to trigger and play synchronized to the exact millisecond as the clock struck midnight on New Year's Eve / live event broadcast.</p>
+      <p>Edited a script running an electronic billboard overlooking Times Square in New York City to include an animation of a ball dropping. The video had to trigger and play synchronized to t as the clock struck midnight on New Year's Eve / live event broadcast.</p>
       
       <h4>The Challenge: Zero Documentation & Non-Standard Hardware</h4>
-      <p>The physical LED display hardware arrived on location without vendor documentation, instruction manuals, or standard software APIs. Furthermore, the non-standard triangular screen geometry and controller latency created severe risks of visible video tearing, frame dropping, and aspect ratio stretching across panel seams.</p>
+      <p>There was no documentation, instruction manuals, just example scripts with some comments in German.</p>
 
       <h4>Engineering Solution & Reverse Engineering</h4>
-      <p>Without manual documentation, I reverse-engineered the display controller's communication protocol directly using serial and network socket packet sniffing. I identified the proprietary control codes required to trigger raw frame playback, bypass software UI lag, and control panel refresh rates.</p>
-      <p>To guarantee millisecond precision, I developed a microsecond system clock synchronization harness that monitored local time against high-precision NTP servers, pre-buffering video frames into memory and dispatching playback commands at the exact frame boundary. I also wrote custom aspect-ratio slicing routines tailored to the physical triangular dimensions to ensure perfect alignment without edge distortion.</p>
+      <p>Without manual documentation, I reverse-engineered the display controller's communication protocol.</p>
 
       <h4>Outcome & Key Impact</h4>
       <p>Delivered a flawless, frame-accurate video presentation live at midnight before a massive live Times Square audience and national broadcast viewers with zero frame dropping, zero latency drift, and crisp geometric visual rendering across all display facets.</p>
@@ -219,25 +218,18 @@ const projectCaseStudies = {
     subtitle: "German Luxury Automotive Manufacturer (BMW)",
     body: `
       <h4>Project Context & Objectives</h4>
-      <p>A major global luxury automotive manufacturer required a simultaneous, network-wide rollout of a custom interactive screensaver across all corporate employee desktop workstations worldwide to launch an internal brand campaign.</p>
+      <p>A major global luxury automotive manufacturer required a simultaneous, network-wide rollout of a custom interactive screensaver across all corporate employee desktop workstations worldwide to launch an internal rebranding campaign.</p>
 
       <h4>The Enterprise IT Challenge</h4>
-      <p>Enterprise IT infrastructure enforced exceptionally strict operational constraints: zero memory growth profiles over weeks of continuous background idle execution, minimal CPU utilization during business hours, cross-platform OS workstation support (Windows & macOS), and silent deployment across active directory domains.</p>
+      <p>This was in the day where gettimng things to work on different OS was a challenge, and silent deployment across active directory domains. They chose Macromedia Flash as it had aleady solved the cross-platform deployment problem.</p>
 
       <h4>Engineering Architecture & Memory Optimization</h4>
-      <p>I engineered a standalone, lightweight executable payload optimized specifically for zero memory leaks. By implementing strict object lifecycle management, static canvas buffer re-use, and avoiding dynamic heap allocations in animation loops, the payload maintained a rock-solid, flat memory footprint across thousands of continuous runtime hours.</p>
-      <p>Working alongside corporate network administrators, I scripted silent installer packages and registry/preference configuration routines that allowed enterprise software management tools to push the update silently across tens of thousands of global endpoints without requiring user restarts or elevated prompt interaction.</p>
+      <p>Working alongside corporate network administrators, I helped design the deployment of the screensaver I had developed.</p>
 
       <h4>Outcome & Key Impact</h4>
       <p>Achieved a 100% successful global rollout across corporate headquarters and regional facilities with zero downtime, zero memory leak degradation, and zero reported IT ticket escalations across the entire workstation fleet.</p>
     `,
-    tags: [
-      "Enterprise Deployment",
-      "Zero-Leak Memory Architecture",
-      "C / C++ / Win32 / macOS",
-      "Active Directory",
-      "Performance Optimization",
-    ],
+    tags: ["Enterprise Deployment", "Win32 / macOS", "Active Directory", "Performance Optimization"],
   },
 
   firebell: {
@@ -253,10 +245,10 @@ const projectCaseStudies = {
       <p>Firebell allowed crisis facilitators to construct realistic scenarios where fake hostile stakeholder accounts, enraged customer groups, and simulated news media outlets unleashed rapid-fire attacks against the client's brand. Facilitators used a real-time event control dashboard to inject unexpected plot twists—such as trending hashtag surges, petition launches, or fake video leaks—forcing executive teams to respond live under immense pressure.</p>
 
       <h4>Engineering & Security Isolation</h4>
-      <p>Because the platform simulated intense corporate emergencies and reputational panics, absolute network isolation was mandatory. I engineered strict sandbox boundaries ensuring zero simulated posts or media assets could ever leak onto the public web, while maintaining high-concurrency real-time WebSocket feeds for participants in the room.</p>
+      <p>Because the platform simulated intense corporate emergencies and reputational panics, absolute network isolation was mandatory. As a selling point, the entiure drill happened isolated from the internet, using LAN connections between laptops with one orchestrating the drill. I engineered strict sandbox boundaries ensuring zero simulated posts or media assets could ever leak onto the public web, while maintaining real-time WebSocket feeds for participants in the room.</p>
 
       <h4>Outcome & Industry Impact</h4>
-      <p>Firebell put hundreds of Fortune 500 C-suite executives, legal counsel, and PR leadership teams through live "trial-by-fire" crisis exercises globally, establishing Weber Shandwick as the global leader in digital crisis preparedness.</p>
+      <p>Firebell put dozens of Fortune 500 C-suite executives, legal counsel, and PR leadership teams through live "trial-by-fire" crisis exercises globally, establishing Weber Shandwick as the global leader in digital crisis preparedness.</p>
     `,
     tags: [
       "Firebell",
@@ -274,13 +266,13 @@ const projectCaseStudies = {
     subtitle: "Pioneering E-Commerce Customization Platform (Jostens Corporation)",
     body: `
       <h4>Project Context & Historical Significance</h4>
-      <p>Before modern 3D web configurators existed, consumers customizing high-value jewelry like high school and college class rings had to rely on printed static catalogs or imagination. Jostens commissioned the architecture and development of the <strong>Jostens Class Ring Designer</strong>—one of the world's very first web-based interactive product configurators that gave consumers an instant, photorealistic visual preview of their exact customized ring before purchasing.</p>
+      <p>Before modern 3D web configurators existed, consumers customizing high-value jewelry like high school and college class rings had to rely on printed static catalogs or imagination. Jostens hired me to work with their small, internal team to develop the <strong>Jostens Class Ring Designer</strong>—one of the world's very first web-based interactive product configurators that gave consumers an instant, photorealistic visual preview of their exact customized ring before purchasing.</p>
 
       <h4>The Engineering & Graphic Compositing Challenge</h4>
-      <p>Building a real-time visual product preview in the early web era presented severe technical hurdles: strict bandwidth constraints, browser memory limitations, and the complex combinatorial mathematics of combining dozens of ring metals (gold, silver, white gold), gemstones, cuts, side-panel crests, activity emblems, and custom engraved text strings dynamically.</p>
+      <p>Building a real-time visual product preview in the early web era presented severe technical hurdles: browser limitations and brower differernces made delicate work harder. The composite image represented dozens of ring elements: metals (gold, silver, white gold), gemstones, cuts, side-panel crests, activity emblems, and custom engraved text strings.</p>
 
       <h4>Architectural Solution & Layered Asset Rendering</h4>
-      <p>I engineered a dynamic image compositing and layering engine that pre-calculated vector boundaries and layer masks for thousands of ring permutations. By optimizing sprite sheets, color palette swapping, and modular asset layering, the system dynamically assembled photorealistic composite ring previews on the fly in response to consumer clicks without latency or full page refreshes.</p>
+      <p>I engineered a dynamic image compositing and layering engine, along with an internal calibration interface that let operators fine-tune the position of thousands of individual ring elements. The ring components had been prepared by an overseas production team, and small inconsistencies in the cutouts meant each element sometimes needed to be nudged into precise alignment. That behind-the-scenes tooling allowed the team to correct the artwork once and feed the calibrated coordinates into the customer-facing system, which then assembled photorealistic composite ring previews in response to consumer selections without latency or full page refreshes.</p>
       <p>The system seamlessly integrated real-time pricing calculation logic based on metal selections and gemstone options, submitting structured build-to-order specs directly to Jostens' manufacturing fulfillment systems.</p>
 
       <h4>Outcome & Industry Impact</h4>
@@ -308,11 +300,15 @@ const projectCaseStudies = {
       <p>To continuously surface non-linear alpha in changing market regimes, LineTrader incorporates custom <strong>Genetic Evolution algorithms</strong>, Machine Learning signal models, and rigorous <strong>Walk-Forward Optimization (WFO)</strong> routines. Strategies evolve across thousands of generations against multi-year high-frequency datasets cached in a DuckDB time-series store (<code class="mono-text">@erikmattheis/data-tools</code>), preventing curve-fitting and ensuring out-of-sample edge.</p>
 
       <h4>Resilient Multi-Provider Data & Multi-Broker Execution</h4>
-      <p>System reliability is maintained through automated, multi-tiered backup data provider failovers (Polygon, Coinbase, IBKR SIP) and active multi-broker order management interfaces. Portfolio risk managers track cross-asset Delta, Gamma, and Vega exposures in real time across isolated account structures.</p>
+      <p>System reliability is maintained through automated, multi-tiered backup data provider failovers (Polygon, Coinbase, IBKR SIP) and active multi-broker order management interfaces.</p>
 
-      <h4>1-Click Cryptographic AI Execution System</h4>
-      <p>Rather than relying on unconstrained algorithmic automation or manual chart watching, LineTrader deploys specialized LLM AI agents that act as autonomous quantitative analysts. The agents continually evaluate cross-timeframe volatility compression, order book liquidity, and macroeconomic sentiment to generate high-Expected-Value (high-EV) trade hypotheses.</p>
-      <p>When a statistical setup meets strict risk-reward criteria, the AI agent instantly dispatches a structured trade breakdown (entry limit, stop loss, profit target, expected alpha) directly to my phone with an interactive <strong>1-click cryptographic token approval link</strong>. Tapping approval instantly authorizes signed API order routing to the brokerage in milliseconds, capturing lucrative asymmetric setups while enforcing disciplined human risk oversight.</p>
+      <h4>Opening-Bell Research and Execution Workflow</h4>
+      <p>LineTrader begins with a filtered universe of several hundred tradable stocks, selected using criteria such as recent volume and market capitalization. After the market closes, multiple strategies evaluate unusually high or low daily closing prices and are re-ranked for the next session according to their recent performance. The strongest strategies get priority when the opening-bell workflow begins the following morning.</p>
+      <p>At the open, the system evaluates opening prices and generates long and short candidates. Some sessions produce no qualifying trades; on others, several candidates qualify at once. A secondary selection mechanic resolves those overlaps and chooses the strongest available candidate for each strategy. Interestingly, that selection is often the candidate furthest from the minimum acceptable entry price, rather than the one closest to the threshold.</p>
+
+      <h4>Sub-Second Timing with Strategy-Specific Edges</h4>
+      <p>The workflow is designed to complete within hundredths of a second of the opening bell. Timing behavior is measured by strategy rather than assumed: for some strategies, waiting until 9:31 produces average performance close to an immediate entry, while for others the entire historical edge is concentrated in the first minute of trading. That distinction is part of the system's research and execution model.</p>
+
 
       <h4>Key Engineering Capabilities</h4>
       <ul>
@@ -365,7 +361,7 @@ const projectCaseStudies = {
 
       <h4>Engineering a Memory Leak Diagnostic Suite</h4>
       <p>I built an isolated diagnostic web application and tutorial benchmark (<code class="mono-text">memiry-leak</code>) featuring reproducible test beds that isolate specific, real-world Node.js heap leaks: circular closure references, orphaned event listeners, uncleared timers, and unbounded array growth.</p>
-      <p>This suite serves a dual purpose: it acts as a visual learning environment for deep heap profiling and provides a standardized benchmark to evaluate and train AI coding agents on diagnosing memory leaks from heap snapshot dumps and memory allocation timelines.</p>
+      <p>This suite serves a dual purpose: it acts as a visual learning environment for deep heap profiling and provides a standardized benchmark to evaluate and train AI coding agents on diagnosing memory leaks from heap snapshot dumps and memory allocation timelines. <code class="mono-text">"Read the memiry-leak microsite and see if you identify any of those anti-patterns in our code."</code></p>
 
       <h4>Real-World Fixes Applied</h4>
       <ul>
